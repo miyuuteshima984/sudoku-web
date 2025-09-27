@@ -1,0 +1,115 @@
+/* 基础：消除默认 margin，保证尺寸计算稳定 */
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+.app {
+  min-height: 100%;
+  display: grid;
+  justify-items: center; /* 横向把标题和棋盘都居中 */
+  align-content: start; /* 从页面顶部开始排，不做垂直居中 */
+  gap: 16px;
+  padding: 24px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(9, 40px);
+  grid-auto-rows: 40px;
+  border: 2px solid #333;
+  margin-top: 8px;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #aaa;
+  text-align: center;
+  font-size: 18px;
+  outline: none;
+}
+
+/* 分区粗线 */
+.cell:nth-child(9n + 3),
+.cell:nth-child(9n + 6) {
+  border-right-width: 2px;
+  border-right-color: #333;
+}
+.cell:nth-child(n + 19):nth-child(-n + 27),
+.cell:nth-child(n + 46):nth-child(-n + 54) {
+  border-bottom-width: 2px;
+  border-bottom-color: #333;
+}
+
+.given {
+  background: #f6f6f6;
+  font-weight: 600;
+  color: #222;
+}
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+}
+button:hover {
+  background: #f5f5f5;
+}
+
+.given {
+  background: #f6f6f6;
+  font-weight: 600;
+  color: #222;
+}
+
+.cell.error {
+  background: #ffeaea;
+  border-color: #d33;
+  color: #b00;
+}
+
+.status {
+  font-size: 14px;
+  color: #333;
+}
+.toolbar {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+}
+button:hover {
+  background: #f5f5f5;
+}
+
+.given {
+  background: #f6f6f6;
+  font-weight: 600;
+  color: #222;
+}
+.cell.error {
+  background: #ffeaea;
+  border-color: #d33;
+  color: #b00;
+}

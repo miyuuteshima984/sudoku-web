@@ -113,3 +113,20 @@ button:hover {
   border-color: #d33;
   color: #b00;
 }
+
+.leaderboard {
+  margin-top: 16px;
+}
+.leaderboard table {
+  border-collapse: collapse;
+  min-width: 420px;
+}
+.leaderboard th,
+.leaderboard td {
+  border: 1px solid #ddd;
+  padding: 6px 8px;
+  text-align: left;
+}
+.leaderboard thead {
+  background: #f3f3f3;
+}
